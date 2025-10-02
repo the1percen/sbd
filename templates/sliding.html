@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sliding Systems - SUBASH BUILD AND DESIGN</title>
+  <link rel="stylesheet" href="{% static 'fontawesome-5.5/css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'magnific-popup/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/tooplate-infinite-loop.css' %}" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <section id="infinite" class="text-white tm-font-big tm-parallax">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
+      <div class="container">
+        <div class="tm-next">
+          <a href="index.html" class="navbar-brand">SUBASH BUILD AND DESIGN</a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars navbar-toggler-icon"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link tm-nav-link" href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link tm-nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                What We Do
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="interior.html">Interior Design</a>
+                <a class="dropdown-item" href="sliding.html">Sliding Systems</a>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link tm-nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link tm-nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Text -->
+    <div class="text-center tm-hero-text-container">
+      <div class="tm-hero-text-container-inner">
+        <h2 class="tm-hero-title">Sliding Systems</h2>
+        <p class="tm-hero-subtitle">Space-Saving • Stylish • Functional</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="tm-section-pad-top">
+    <div class="container tm-container-gallery">
+      <div class="row">
+        <div class="text-center col-12">
+          <h2 class="tm-text-primary tm-section-title mb-4">Our Sliding Projects</h2>
+          <p class="mx-auto tm-section-desc">
+            Discover our premium sliding solutions, including wardrobe doors, partitions, and customized space-saving systems. Every project is crafted with durability and modern style in mind.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="mx-auto tm-gallery-container">
+            <div class="grid tm-gallery">
+
+              <a href="img/sliding/sl1.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl1.jpg' %}" alt="Sliding Wardrobe" class="img-fluid">
+                  <figcaption><h2><i>Sliding <span>Wardrobe</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl2.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl2.jpg' %}" alt="Glass Partition" class="img-fluid">
+                  <figcaption><h2><i>Glass <span>Partition</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl3.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl3.jpg' %}" alt="Office Partition" class="img-fluid">
+                  <figcaption><h2><i>Office <span>Partition</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl4.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl4.jpg' %}" alt="Wooden Sliding Door" class="img-fluid">
+                  <figcaption><h2><i>Wooden <span>Sliding</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl5.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl5.jpg' %}" alt="Mirror Wardrobe" class="img-fluid">
+                  <figcaption><h2><i>Mirror <span>Wardrobe</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl6.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl6.jpg' %}" alt="Partition System" class="img-fluid">
+                  <figcaption><h2><i>Partition <span>System</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl7.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl7.jpg' %}" alt="Frosted Glass" class="img-fluid">
+                  <figcaption><h2><i>Frosted <span>Glass</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl8.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl8.jpg' %}" alt="Compact Storage" class="img-fluid">
+                  <figcaption><h2><i>Compact <span>Storage</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl9.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl9.jpg' %}" alt="Designer Sliding" class="img-fluid">
+                  <figcaption><h2><i>Designer <span>Sliding</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl10.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl10.jpg' %}" alt="Wardrobe System" class="img-fluid">
+                  <figcaption><h2><i>Wardrobe <span>System</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+              <a href="img/sliding/sl11.jpg" class="tm-gallery-item">
+                <figure class="effect-honey">
+                  <img src="{% static 'img/sliding/sl11.jpg' %}" alt="Premium Sliding" class="img-fluid">
+                  <figcaption><h2><i>Premium <span>Sliding</span></i></h2></figcaption>
+                </figure>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="tm-section-pad-top tm-parallax-2">
+    <div class="container tm-container-contact">
+      <div class="row">
+        <div class="text-center col-12">
+          <h2 class="tm-section-title mb-4">Contact Us</h2>
+          <p class="mb-5">We’d love to hear about your sliding system needs. Get in touch today!</p><br>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <form action="" method="get">
+            <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
+            <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
+            <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
+            <button type="submit" class="btn tm-btn-submit">Submit</button>
+          </form>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="contact-item">
+            <a href="mailto:subashbuildanddesignstudio@gmail.com" class="item-link">
+              <i class="far fa-2x fa-envelope mr-4"></i>
+              <span>subashbuildanddesignstudio@gmail.com</span>
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="https://www.google.com/maps" class="item-link">
+              <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
+              <span>1/15, 17th Street, B-Sector, Siva Sakthi Nagar, Annanur, Chennai-600062</span>
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="tel:7550180554" class="item-link">
+              <i class="fas fa-2x fa-phone-square mr-4"></i>
+              <span>7550180554</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center small tm-footer">
+      <p class="mb-0">
+        Copyright &copy; 2025 SUBASH BUILD AND DESIGN 
+        . <a rel="nofollow" href="#">Designed by upmtechnologies</a>
+      </p>
+    </footer>
+  </section>
+
+  <!-- Scripts -->
+  <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>     
+  <script src="{% static 'slick/slick.min.js' %}"></script>
+  <script src="{% static 'magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/easing.min.js' %}"></script>
+  <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>     
+  <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <!-- Magnific Popup Init -->
+  <script>
+    $(document).ready(function() {
+      $('.tm-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: { enabled: true }
+      });
+    });
+  </script>
+</body>
+</html>
