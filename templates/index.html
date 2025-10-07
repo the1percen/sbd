@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>SUBASH BUILD AND DESIGN</title>
     <link rel="stylesheet" href="{% static 'fontawesome-5.5/css/all.min.css' %}" />
@@ -12,11 +12,208 @@
     <link rel="stylesheet" href="{% static 'magnific-popup/magnific-popup.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/tooplate-infinite-loop.css' %}" />
-<!--
-Tooplate 2117 SUBASH BUILD AND DESIGN
-https://www.tooplate.com/view/2117-infinite-loop
--->
+    <style>
+      /* Prevent zoom completely */
+      * {
+        touch-action: pan-y pan-x;
+      }
 
+      html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        touch-action: manipulation;
+      }
+
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+
+      /* Ensure navbar text is always visible */
+      .tm-navbar .nav-link {
+        color: #fff !important;
+        opacity: 1 !important;
+      }
+
+      .tm-navbar.scroll .nav-link {
+        color: #369 !important;
+      }
+
+      .tm-navbar .navbar-brand {
+        color: #fff !important;
+        opacity: 1 !important;
+      }
+
+      .tm-navbar.scroll .navbar-brand {
+        color: #369 !important;
+      }
+
+      /* Dropdown Menu Styling */
+      .dropdown-menu {
+        background-color: #fff;
+        border: 1px solid #e9ecef;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        display: none;
+      }
+
+      .dropdown-menu.show {
+        display: block;
+      }
+
+      .dropdown-item {
+        color: #369;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+        display: block;
+        text-decoration: none;
+      }
+
+      .dropdown-item:hover {
+        background-color: #369;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .tm-navbar.scroll .dropdown-menu {
+        background-color: #fff;
+      }
+
+      /* Ensure dropdown toggle is visible and clickable */
+      .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+      }
+
+      /* Mobile Navigation Fixes */
+      @media (max-width: 767px) {
+        /* Fix navbar toggler position */
+        .navbar-toggler {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          z-index: 1000;
+          border-color: #fff;
+        }
+
+        .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .navbar-collapse {
+          background-color: rgba(255, 255, 255, 0.98);
+          padding: 15px;
+          border-radius: 5px;
+          margin-top: 10px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-collapse .nav-link {
+          color: #369 !important;
+          padding: 12px 20px !important;
+          border-bottom: 1px solid #e9ecef;
+        }
+        
+        .navbar-collapse .nav-link:hover {
+          background-color: #369 !important;
+          color: #fff !important;
+        }
+        
+        .navbar-collapse .nav-item:last-child .nav-link {
+          border-bottom: none;
+        }
+
+        /* Mobile Dropdown - make it always visible when parent is clicked */
+        .nav-item.dropdown.show .dropdown-menu {
+          display: block !important;
+          position: static !important;
+          float: none;
+          background-color: #f8f9fa;
+          border: none;
+          box-shadow: none;
+          padding-left: 20px;
+          margin-top: 0;
+        }
+
+        .dropdown-menu {
+          background-color: #f8f9fa;
+          border: none;
+          box-shadow: none;
+          padding-left: 20px;
+        }
+
+        .dropdown-item {
+          padding: 8px 20px;
+          font-size: 0.95rem;
+          color: #369 !important;
+          cursor: pointer;
+        }
+
+        .dropdown-toggle {
+          cursor: pointer;
+        }
+
+        /* Hero text responsive */
+        .tm-hero-title {
+          font-size: 2rem !important;
+        }
+        
+        .tm-hero-subtitle {
+          font-size: 1rem !important;
+        }
+
+        /* Section titles */
+        .tm-section-title {
+          font-size: 1.8rem !important;
+        }
+
+        /* Contact form */
+        .tm-input {
+          width: 100% !important;
+        }
+
+        .tm-btn-submit {
+          width: 100% !important;
+        }
+
+        /* Gallery items spacing */
+        .tm-gallery-item {
+          margin: 10px 0 !important;
+        }
+      }
+
+      /* Ensure gallery images are responsive */
+      .tm-gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      /* Fix for slick slider on mobile */
+      @media (max-width: 480px) {
+        .slick-slide {
+          padding: 0 5px;
+        }
+      }
+
+      /* Gallery carousel specific styles */
+      .tm-gallery.slick-initialized {
+        display: block !important;
+      }
+
+      .tm-gallery .slick-slide {
+        margin: 0 10px;
+      }
+
+      .tm-gallery .slick-list {
+        margin: 0 -10px;
+      }
+    </style>
   </head>
   <body>    
     <!-- Hero section -->
@@ -29,8 +226,8 @@ https://www.tooplate.com/view/2117-infinite-loop
     </div>             
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fas fa-bars navbar-toggler-icon"></i>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -40,11 +237,16 @@ https://www.tooplate.com/view/2117-infinite-loop
         </li>
 
         <!-- Dropdown Menu for What We Do -->
-<li class="nav-item ">
-  <a class="nav-link tm-nav-link" href="#whatwedo">What We Do</a>
-  
-</li>
-
+        <li class="nav-item dropdown">
+          <a class="nav-link tm-nav-link dropdown-toggle" id="navbarDropdown"
+             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            What We Do
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'interior' %}">Interior Design</a>
+            <a class="dropdown-item" href="{% url 'sliding' %}">Sliding Systems</a>
+          </div>
+        </li>
 
         <li class="nav-item">
           <a class="nav-link tm-nav-link" href="#testimonials">Testimonials</a>
@@ -162,26 +364,20 @@ https://www.tooplate.com/view/2117-infinite-loop
           <div class="col-lg-12 tm-content-box">
             <h2 class="text-white text-center mb-4 tm-section-title">Testimonials</h2>
             <p class="mx-auto tm-section-desc text-center">
-We believe every home and workspace deserves to be both stylish and practical. Whether it’s designing interiors, or construction, or installing modern sliding doors, we focus on quality and detail. Don’t just take our word for it see how our clients describe their journey with us. </p>
+We believe every home and workspace deserves to be both stylish and practical. Whether it's designing interiors, or construction, or installing modern sliding doors, we focus on quality and detail. Don't just take our word for it see how our clients describe their journey with us. </p>
             <div class="mx-auto tm-gallery-container tm-gallery-container-2">
               <div class="tm-testimonials-carousel">
+                {% for testimonial in testimonials %}
                 <figure class="tm-testimonial-item">
-                  <!--<img src="{% static 'img/testimonial-img-01.jpg' %}" alt="Image" class="img-fluid mx-auto">-->
-                  <blockquote>I had my bedroom and kitchen interiors done. At first I was worried about space, but the customized design made it very convenient. The kitchen especially looks modern now. Appreciate Kanimozhi’s patience in understanding my ideas.</blockquote>
-                  <figcaption>Interior Design</figcaption>
+                  <blockquote>{{ testimonial.review }}</blockquote>
+                  <figcaption>{{ testimonial.name }}</figcaption>
                 </figure>
-
+                {% empty %}
                 <figure class="tm-testimonial-item">
-                  <!--<img src="{% static 'img/testimonial-img-02.jpg' %}" alt="Image" class="img-fluid mx-auto">-->
-                  <blockquote>Good work on the wardrobe doors. The design is simple but stylish, and they finished it on time. Looks nice in my room. Thanks Kani mam for arranging everything.</blockquote>
-                  <figcaption>Aluminium sliding doors</figcaption>
+                  <blockquote>No testimonials available yet.</blockquote>
+                  <figcaption>-</figcaption>
                 </figure>
-
-                <figure class="tm-testimonial-item">
-                  <!--<img src="{% static 'img/testimonial-img-03.jpg' %}" alt="Image" class="img-fluid mx-auto">-->
-                  <blockquote>We moved into a single BHK in the 1st floor. The place is compact but well planned. Ventilation is good and the interiors are also practical. Kanimozhi helped us throughout the process, really grateful.</blockquote>
-                  <figcaption>Construction</figcaption>
-                </figure>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -196,7 +392,7 @@ We believe every home and workspace deserves to be both stylish and practical. W
           <div class="text-center col-12">
               <h2 class="tm-text-primary tm-section-title mb-4">Gallery</h2>
               <p class="mx-auto tm-section-desc">
-                “Explore our portfolio to see how we bring design ideas to life. From elegant living spaces to functional commercial interiors, each project reflects our commitment to quality, creativity, and client satisfaction.”
+                "Explore our portfolio to see how we bring design ideas to life. From elegant living spaces to functional commercial interiors, each project reflects our commitment to quality, creativity, and client satisfaction."
               </p>
           </div>            
         </div>
@@ -204,70 +400,20 @@ We believe every home and workspace deserves to be both stylish and practical. W
             <div class="col-12">
                 <div class="mx-auto tm-gallery-container">
                     <div class="grid tm-gallery">
-                      <a href="img/g1.jpg">
+                      {% for image in gallery_images %}
+                      <a href="{{ image.image.url }}" class="tm-gallery-link">
                         <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g1.jpg' %}" alt="Image 1" class="img-fluid">
+                          <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid">
                           <figcaption>
-                            <h2><i>Physical Health <span>Exercise!</span></i></h2>
+                            <h2><i>{{ image.title }}</i></h2>
                           </figcaption>
                         </figure>
                       </a>
-                      <a href="img/g2.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g2.jpg' %}" alt="Image 2" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Rain on Glass <span>Second Image</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/g3.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g3.jpg' %}" alt="Image 3" class="img-fluid">
-                          <figcaption>
-                            <h2><i><span>Sea View</span> Mega City</i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/g4.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g4.jpg' %}" alt="Image 4" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Dream Girl <span>Thoughts</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/g5.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g5.jpg' %}" alt="Image 5" class="img-fluid">
-                          <figcaption>
-                            <h2><i><span>Workstation</span> Offices</i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/g6.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g6.jpg' %}" alt="Image 6" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Just Above <span>The City</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/g7.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g7.jpg' %}" alt="Image 7" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Another <span>Exercise Time</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/g8.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="{% static 'img/g8.jpg' %}" alt="Image 8" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Repeated <span>Image Spot</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
+                      {% empty %}
+                      <div class="text-center w-100">
+                        <p>No images available yet.</p>
+                      </div>
+                      {% endfor %}
                     </div>
                 </div>                
             </div>        
@@ -285,7 +431,7 @@ We believe every home and workspace deserves to be both stylish and practical. W
             <div class="text-center col-12">
                 <h2 class="tm-section-title mb-4">Contact Us</h2>
                 <p class="mb-5">
-                  “We’d love to hear from you! Whether you’re planning a new construction project, redesigning your interiors, or need custom wardrobe and partition solutions, our team is here to help. Get in touch with us today.”
+                  "We'd love to hear from you! Whether you're planning a new construction project, redesigning your interiors, or need custom wardrobe and partition solutions, our team is here to help. Get in touch with us today."
                 </p><br>
             </div>
                     
@@ -310,7 +456,7 @@ We believe every home and workspace deserves to be both stylish and practical. W
                 <div class="contact-item">
                   <a rel="nofollow" href="mailto:subashbuildanddesignstudio@gmail.com" class="item-link">
     <i class="far fa-2x fa-envelope mr-4"></i>
-    <span class="mb-0" >subashbuildanddesignstudio@gmail.com</span>
+    <span class="mb-0">subashbuildanddesignstudio@gmail.com</span>
 </a>             
                 </div>
                 
@@ -327,27 +473,26 @@ We believe every home and workspace deserves to be both stylish and practical. W
                       <span class="mb-0">7550180554</span>
                   </a>              
                 </div>
-                <!-- ✅ Social Media Icons -->
-                 <div class="contact-item ">
+                
+                 <div class="contact-item">
                 <a href="https://wa.me/917550180554" target="_blank" class="item-link">
                   <i class="fab fa-2x fa-whatsapp mr-4"></i>
                   <span class="mb-0">7550180554</span>
                 </a>
               </div>
-              <div class="contact-item ">
+              <div class="contact-item">
                 <a href="" target="_blank" class="item-link mr-3">
                   <i class="fab fa-2x fa-instagram mr-4"></i>
                   <span class="mb-0">  </span>
                 </a>
               </div>
-              
 
                 <div class="contact-item">&nbsp;</div>
             
             </div>
             
             
-        </div><!-- row ending --> 
+        </div>
         
       </div>
 
@@ -358,15 +503,24 @@ We believe every home and workspace deserves to be both stylish and practical. W
           . <a rel="nofollow" href="" title="HTML  s">Designed by upmtechnologies</a></p>
         </footer>
 
-    </section>
-    
-    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>     
+    </section>   
+    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'slick/slick.min.js' %}"></script>
     <script src="{% static 'magnific-popup/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/easing.min.js' %}"></script>
-    <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>     
-    <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+    <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>   
 <script>
+  // Prevent default zoom behavior
+  document.addEventListener('touchmove', function (event) {
+    if (event.scale !== 1) { event.preventDefault(); }
+  }, { passive: false });
+
+  document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+  });
+
   function getOffSet(){
     var _offset = 450;
     var windowHeight = window.innerHeight;
@@ -445,22 +599,39 @@ We believe every home and workspace deserves to be both stylish and practical. W
       }
     });
     
-    // Close mobile menu after click 
-    $('#tmNav a').on('click', function(){
+    // Mobile dropdown toggle - custom handler
+    if ($(window).width() <= 767) {
+      $('.dropdown-toggle').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $parent = $(this).parent();
+        $parent.toggleClass('show');
+        $(this).next('.dropdown-menu').toggleClass('show');
+      });
+      
+      // Dropdown item click - navigate to page
+      $('.dropdown-item').on('click', function(e) {
+        e.stopPropagation();
+        // Allow normal link behavior
+        window.location.href = $(this).attr('href');
+      });
+    }
+    
+    // Close mobile menu after clicking non-dropdown links
+    $('#tmNav a.nav-link:not(.dropdown-toggle)').on('click', function(){
       $('.navbar-collapse').removeClass('show'); 
-    })
+    });
 
-    // Smooth scrolling
+    // Smooth scrolling for same-page links only
     $('#tmNav').singlePageNav({
       'easing': 'easeInOutExpo',
-      'speed': 600
+      'speed': 600,
+      filter: ':not(.dropdown-item):not(.dropdown-toggle)'
     });        
 
-    $("a").on('click', function(event) {
+    // Smooth scroll for anchor links (not external pages)
+    $("a[href^='#']").on('click', function(event) {
       if (this.hash !== "") {
-        if ($(this).attr("href").startsWith("interior.html") || $(this).attr("href").startsWith("sliding.html")) {
-          return; // allow normal page navigation
-        }
         event.preventDefault();
         var hash = this.hash;
         $('html, body').animate({
@@ -471,37 +642,50 @@ We believe every home and workspace deserves to be both stylish and practical. W
       }
     });
 
-    // Magnific Popup
+    // Magnific Popup for Gallery
     $('.tm-gallery').magnificPopup({
-      delegate: 'a',
+      delegate: 'a.tm-gallery-link',
       type: 'image',
-      gallery: { enabled: true }
+      gallery: { 
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0,1]
+      },
+      image: {
+        titleSrc: function(item) {
+          return item.el.find('img').attr('alt');
+        }
+      }
     });
 
-    // Testimonials carousel
+    // Testimonials carousel - infinite loop
     $('.tm-testimonials-carousel').slick({
       dots: true,
-      prevArrow: false,
-      nextArrow: false,
-      infinite: false,
+      arrows: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
       slidesToShow: 3,
       slidesToScroll: 1,
       responsive: [
         { breakpoint: 992, settings: { slidesToShow: 2 } },
-        { breakpoint: 768, settings: { slidesToShow: 2 } }, 
+        { breakpoint: 768, settings: { slidesToShow: 1 } }, 
         { breakpoint: 480, settings: { slidesToShow: 1 } }
       ]
     });
 
-    // Gallery carousel
+    // Gallery carousel - infinite loop
     $('.tm-gallery').slick({
-      dots: true,
-      infinite: false,
+      dots: false,
+      arrows: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
       slidesToShow: 5,
-      slidesToScroll: 2,
+      slidesToScroll: 1,
       responsive: [
-        { breakpoint: 1199, settings: { slidesToShow: 4, slidesToScroll: 2 } },
-        { breakpoint: 991, settings: { slidesToShow: 3, slidesToScroll: 2 } },
+        { breakpoint: 1199, settings: { slidesToShow: 4, slidesToScroll: 1 } },
+        { breakpoint: 991, settings: { slidesToShow: 3, slidesToScroll: 1 } },
         { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
         { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
       ]

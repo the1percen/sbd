@@ -2,16 +2,29 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from .forms import ContactForm
-from .models import Contact
+from .models import Contact,GalleryImage,Testimonial
 
 def index_view(request):
-    return render(request, "index.html")
+    gallery_images = GalleryImage.objects.all()
+    testimonials = Testimonial.objects.all()
+    return render(request, 'index.html', {
+        'gallery_images': gallery_images,
+        'testimonials': testimonials,
+    })
 
 def interior_view(request):
-    return render(request, "interior.html")
+    gallery_images = GalleryImage.objects.filter(category='interior')
+    return render(request, "interior.html", {
+        'gallery_images': gallery_images,
+        'category': 'interior'
+    })
 
 def sliding_view(request):
-    return render(request, "sliding.html")
+    gallery_images = GalleryImage.objects.filter(category='sliding')
+    return render(request, "sliding.html", {
+        'gallery_images': gallery_images,
+        'category': 'sliding'
+    })
 
 def contact_view(request):
     if request.method == "POST":
