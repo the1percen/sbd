@@ -13,6 +13,7 @@ class GalleryImage(models.Model):
     CATEGORY_CHOICES = [
         ('interior', 'Interior'),
         ('sliding', 'Sliding'),
+        ('construction', 'Construction'),  # Added construction option
     ]
     title = models.CharField(max_length=100, blank=True)
     image = models.ImageField(upload_to='gallery/')

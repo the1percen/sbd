@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'magnific-popup/magnific-popup.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/tooplate-infinite-loop.css' %}" />
-    <style>
+<style>
       /* Prevent zoom completely */
       * {
         touch-action: pan-y pan-x;
@@ -22,15 +22,59 @@
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         touch-action: manipulation;
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
       }
 
       input, select, textarea {
         font-size: 16px !important;
       }
 
+      /* Ensure all major sections don't cause overflow */
+      section {
+        overflow-x: hidden;
+        max-width: 100vw;
+        position: relative;
+      }
+
+      /* Fix parallax sections that might extend beyond viewport */
+      .tm-parallax,
+      .tm-parallax-2 {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
+      .tm-navbar.scroll .nav-link {
+        color: #369 !important;
+      }
+
+      /* Current/active link is white when navbar is scrolled */
+      .tm-navbar.scroll .nav-link.current,
+      .tm-navbar.scroll .nav-link.active {
+        color: #fff !important;
+        background: #369 !important;
+        border-radius: 4px;
+      }
+
+      .tm-navbar .nav-link:hover,
+      .tm-navbar .nav-link:focus,
+      .tm-navbar.scroll .nav-link:hover,
+      .tm-navbar.scroll .nav-link:focus {
+        color: #369 !important;
+        background: none !important;
+        text-decoration: none !important;
+        opacity: 1 !important;
+      }
+
       /* Ensure navbar text is always visible */
       .tm-navbar .nav-link {
-        color: #fff !important;
+        color: #369  !important;
         opacity: 1 !important;
       }
 
@@ -39,7 +83,7 @@
       }
 
       .tm-navbar .navbar-brand {
-        color: #fff !important;
+        color: #369  !important;
         opacity: 1 !important;
       }
 
@@ -90,8 +134,35 @@
         border-left: 0.3em solid transparent;
       }
 
+      /* Ensure gallery images are responsive */
+      .tm-gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      /* Gallery carousel specific styles */
+      .tm-gallery.slick-initialized {
+        display: block !important;
+      }
+
+      .tm-gallery .slick-slide {
+        margin: 0 10px;
+      }
+
+      .tm-gallery .slick-list {
+        margin: 0 -10px;
+      }
+
       /* Mobile Navigation Fixes */
       @media (max-width: 767px) {
+        /* Force everything to stay within viewport */
+        html, body {
+          overflow-x: hidden;
+          max-width: 100%;
+          position: relative;
+        }
+
         /* Fix navbar toggler position */
         .navbar-toggler {
           position: absolute;
@@ -105,12 +176,28 @@
           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
+        /* Fix navbar brand text */
+        .navbar-brand {
+          font-size: 0.9rem !important;
+          max-width: calc(100vw - 80px);
+          white-space: normal;
+          line-height: 1.2;
+        }
+
+        /* Fix navbar container */
+        .tm-navbar .container {
+          max-width: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
         .navbar-collapse {
           background-color: rgba(255, 255, 255, 0.98);
           padding: 15px;
           border-radius: 5px;
           margin-top: 10px;
           box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          max-width: 100vw;
         }
         
         .navbar-collapse .nav-link {
@@ -158,13 +245,36 @@
           cursor: pointer;
         }
 
+        /* Fix hero section */
+        #infinite {
+          overflow-x: hidden;
+          max-width: 100vw;
+          width: 100%;
+        }
+
+        .tm-hero-text-container {
+          max-width: 100vw;
+          padding-left: 15px;
+          padding-right: 15px;
+          box-sizing: border-box;
+        }
+
+        .tm-hero-text-container-inner {
+          max-width: 100%;
+          padding: 0 15px;
+        }
+
         /* Hero text responsive */
         .tm-hero-title {
-          font-size: 2rem !important;
+          font-size: 1.6rem !important;
+          padding: 0 10px;
+          max-width: 100%;
         }
         
         .tm-hero-subtitle {
-          font-size: 1rem !important;
+          font-size: 0.9rem !important;
+          padding: 0 10px;
+          max-width: 100%;
         }
 
         /* Section titles */
@@ -172,26 +282,145 @@
           font-size: 1.8rem !important;
         }
 
+        /* Ensure all containers stay within viewport */
+        .container,
+        .container-fluid {
+          max-width: 100vw;
+          overflow-x: hidden;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+
+        .tm-container-gallery,
+        .tm-container-contact,
+        .tm-testimonials-content {
+          max-width: 100vw;
+          overflow-x: hidden;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        
+        /* Fix row overflow */
+        .row {
+          margin-left: 0;
+          margin-right: 0;
+          max-width: 100%;
+        }
+        
+        /* Ensure columns don't overflow */
+        [class*="col-"] {
+          padding-left: 10px;
+          padding-right: 10px;
+          max-width: 100%;
+        }
+        
+        /* Fix text and content overflow */
+        .tm-intro-text-container,
+        .tm-section-desc,
+        .tm-intro-text {
+          max-width: 100%;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+        }
+
+        /* Fix text overflow */
+        h1, h2, h3, h4, h5, h6, p, span, div {
+          max-width: 100%;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+        }
+        
+        /* Fix gallery container */
+        .tm-gallery-container {
+          max-width: 100vw;
+          overflow-x: hidden;
+          padding: 0;
+        }
+
+        .tm-gallery {
+          max-width: 100%;
+        }
+        
+        /* Fix slick slider overflow */
+        .slick-slider,
+        .slick-list,
+        .slick-track {
+          max-width: 100%;
+        }
+        
+        /* Fix images */
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        
+        /* Fix contact items */
+        .contact-item {
+          max-width: 100%;
+          overflow-wrap: break-word;
+        }
+        
+        .contact-item .item-link {
+          display: flex;
+          align-items: flex-start;
+          max-width: 100%;
+        }
+
+        .contact-item .item-link span {
+          word-break: break-word;
+          max-width: calc(100% - 60px);
+          display: inline-block;
+          font-size: 0.85rem;
+        }
+
         /* Contact form */
         .tm-input {
           width: 100% !important;
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         .tm-btn-submit {
           width: 100% !important;
+          max-width: 100%;
+          box-sizing: border-box;
+        }
+
+        /* Fix form inputs */
+        input,
+        textarea,
+        button {
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         /* Gallery items spacing */
         .tm-gallery-item {
           margin: 10px 0 !important;
         }
-      }
+        
+        /* Fix footer */
+        footer,
+        .tm-footer {
+          max-width: 100vw;
+          overflow-x: hidden;
+          padding: 15px;
+          overflow-wrap: break-word;
+        }
 
-      /* Ensure gallery images are responsive */
-      .tm-gallery-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        .tm-footer p {
+          font-size: 0.75rem;
+          word-break: break-word;
+        }
+
+        /* Fix section padding */
+        .tm-section-pad-top {
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
 
       /* Fix for slick slider on mobile */
@@ -201,18 +430,212 @@
         }
       }
 
-      /* Gallery carousel specific styles */
-      .tm-gallery.slick-initialized {
-        display: block !important;
-      }
+      /* Add these minimal fixes to your existing <style> section in index.html */
 
-      .tm-gallery .slick-slide {
-        margin: 0 10px;
-      }
+/* REPLACE the testimonial and gallery fix section in your CSS with this */
 
-      .tm-gallery .slick-list {
-        margin: 0 -10px;
-      }
+/* TESTIMONIALS FIX - Make visible and readable */
+#testimonials {
+  position: relative;
+}
+
+#testimonials .tm-bg-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+#testimonials .container {
+  position: relative;
+  z-index: 1;
+}
+
+#testimonials .tm-testimonials-content {
+  position: relative;
+  z-index: 1;
+}
+
+.tm-testimonials-carousel {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.tm-testimonial-item {
+  display: block !important;
+  padding: 30px 20px;
+  text-align: center;
+  outline: none;
+}
+
+.tm-testimonial-item blockquote {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+  padding: 0 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  font-weight: 400;
+}
+
+.tm-testimonial-item figcaption {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  margin-top: 10px;
+}
+
+/* Slick dots styling for testimonials */
+.tm-testimonials-carousel .slick-dots {
+  bottom: -40px;
+  position: relative;
+  padding-top: 20px;
+}
+
+.tm-testimonials-carousel .slick-dots li button:before {
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.tm-testimonials-carousel .slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
+  font-size: 16px;
+}
+
+/* GALLERY FIX - Ensure carousel displays properly */
+.tm-gallery-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.tm-gallery {
+  width: 100%;
+  max-width: 100%;
+}
+
+.tm-gallery.slick-initialized .slick-slide {
+  display: block !important;
+}
+
+.tm-gallery .slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.tm-gallery .slick-slide {
+  outline: none;
+}
+
+.tm-gallery .slick-slide img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Gallery arrows styling */
+.tm-gallery .slick-prev,
+.tm-gallery .slick-next {
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: rgba(51, 102, 153, 0.8);
+  border-radius: 50%;
+}
+
+.tm-gallery .slick-prev:hover,
+.tm-gallery .slick-next:hover {
+  background: rgba(51, 102, 153, 1);
+}
+
+.tm-gallery .slick-prev {
+  left: 10px;
+}
+
+.tm-gallery .slick-next {
+  right: 10px;
+}
+
+.tm-gallery .slick-prev:before,
+.tm-gallery .slick-next:before {
+  font-size: 24px;
+  color: #fff;
+  opacity: 1;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+  #testimonials .tm-testimonials-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .tm-testimonial-item {
+    padding: 20px 10px;
+  }
+
+  .tm-testimonial-item blockquote {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 5px;
+  }
+
+  .tm-testimonial-item figcaption {
+    font-size: 1rem;
+  }
+
+  .tm-testimonials-carousel .slick-dots {
+    bottom: -30px;
+    padding-top: 15px;
+  }
+
+  .tm-gallery-container {
+    padding: 0 10px;
+  }
+
+  .tm-gallery .slick-slide {
+    padding: 0 5px;
+  }
+
+  .tm-gallery .slick-slide img {
+    height: 200px;
+  }
+
+  .tm-gallery .slick-prev,
+  .tm-gallery .slick-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  .tm-gallery .slick-prev {
+    left: 5px;
+  }
+
+  .tm-gallery .slick-next {
+    right: 5px;
+  }
+
+  .tm-gallery .slick-prev:before,
+  .tm-gallery .slick-next:before {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tm-gallery .slick-slide img {
+    height: 180px;
+  }
+
+  .tm-testimonial-item blockquote {
+    font-size: 0.9rem;
+  }
+}
     </style>
   </head>
   <body>    
@@ -245,6 +668,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{% url 'interior' %}">Interior Design</a>
             <a class="dropdown-item" href="{% url 'sliding' %}">Sliding Systems</a>
+            <a class="dropdown-item" href="{% url 'construction' %}">Construction</a>
           </div>
         </li>
 

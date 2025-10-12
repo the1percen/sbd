@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from .forms import ContactForm
-from .models import Contact,GalleryImage,Testimonial
+from .models import Contact, GalleryImage, Testimonial
 
 def index_view(request):
     gallery_images = GalleryImage.objects.all()
@@ -24,6 +24,13 @@ def sliding_view(request):
     return render(request, "sliding.html", {
         'gallery_images': gallery_images,
         'category': 'sliding'
+    })
+
+def construction_view(request):
+    gallery_images = GalleryImage.objects.filter(category='construction')
+    return render(request, "construction.html", {
+        'gallery_images': gallery_images,
+        'category': 'construction'
     })
 
 def contact_view(request):
