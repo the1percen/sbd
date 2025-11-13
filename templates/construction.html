@@ -12,191 +12,9 @@
   <link rel="stylesheet" href="{% static 'magnific-popup/magnific-popup.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
   <link rel="stylesheet" href="{% static 'css/tooplate-infinite-loop.css' %}" />
- <style>
-    /* Prevent zoom */
-    html {
-      touch-action: manipulation;
-    }
-
-    /* Ensure navbar text is always visible */
-    .tm-navbar .nav-link {
-      color: #fff !important;
-      opacity: 1 !important;
-    }
-      .tm-navbar.scroll .nav-link {
-  color: #369 !important;
-  
-}
-
-/* Current/active link is white when navbar is scrolled */
-.tm-navbar.scroll .nav-link.current,
-.tm-navbar.scroll .nav-link.active {
-  color: #fff !important;
-  background: #369 !important;
-  border-radius: 4px;
-}
-.tm-navbar .nav-link:hover,
-.tm-navbar .nav-link:focus,
-.tm-navbar.scroll .nav-link:hover,
-.tm-navbar.scroll .nav-link:focus {
-  color: #369 !important;
-  background: none !important;
-  text-decoration: none !important;
-  opacity: 1 !important;
-}
-    .tm-navbar.scroll .nav-link {
-      color: #369 !important;
-    }
-
-    .tm-navbar .navbar-brand {
-      color: #fff !important;
-      opacity: 1 !important;
-    }
-
-    .tm-navbar.scroll .navbar-brand {
-      color: #369 !important;
-    }
-
-    /* Dropdown Menu Styling */
-    .dropdown-menu {
-      background-color: #fff;
-      border: 1px solid #e9ecef;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .dropdown-item {
-      color: #369;
-      padding: 10px 20px;
-      transition: all 0.3s ease;
-    }
-
-    .dropdown-item:hover {
-      background-color: #369;
-      color: #fff;
-    }
-
-    .tm-navbar.scroll .dropdown-menu {
-      background-color: #fff;
-    }
-
-    /* Ensure dropdown toggle is visible and clickable */
-    .dropdown-toggle::after {
-      display: inline-block;
-      margin-left: 0.255em;
-      vertical-align: 0.255em;
-      content: "";
-      border-top: 0.3em solid;
-      border-right: 0.3em solid transparent;
-      border-bottom: 0;
-      border-left: 0.3em solid transparent;
-    }
-
-    /* Mobile Navigation Fixes */
-    @media (max-width: 767px) {
-      /* Fix navbar toggler position */
-      .navbar-toggler {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        z-index: 1000;
-        border-color: #fff;
-      }
-
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
-
-      .navbar-collapse {
-        background-color: rgba(255, 255, 255, 0.98);
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      }
-      
-      .navbar-collapse .nav-link {
-        color: #369 !important;
-        padding: 12px 20px !important;
-        border-bottom: 1px solid #e9ecef;
-      }
-      
-      .navbar-collapse .nav-link:hover {
-        background-color: #369 !important;
-        color: #fff !important;
-      }
-      
-      .navbar-collapse .nav-item:last-child .nav-link {
-        border-bottom: none;
-      }
-
-      /* Mobile Dropdown */
-      .dropdown-menu {
-        background-color: #f8f9fa;
-        border: none;
-        box-shadow: none;
-        padding-left: 20px;
-      }
-
-      .dropdown-item {
-        padding: 8px 20px;
-        font-size: 0.95rem;
-        color: #369 !important;
-      }
-
-      /* Hero text responsive */
-      .tm-hero-title {
-        font-size: 2rem !important;
-      }
-      
-      .tm-hero-subtitle {
-        font-size: 1rem !important;
-      }
-
-      /* Section titles */
-      .tm-section-title {
-        font-size: 1.8rem !important;
-      }
-
-      /* Contact form */
-      .tm-input {
-        width: 100% !important;
-      }
-
-      .tm-btn-submit {
-        width: 100% !important;
-      }
-
-      /* Gallery items spacing */
-      .tm-gallery-item {
-        margin: 10px 0 !important;
-      }
-
-      /* Contact info text */
-      .contact-item .item-link span {
-        font-size: 0.9rem;
-      }
-    }
-
-    /* Ensure gallery images are responsive */
-    .tm-gallery-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    /* Fix for slick slider on mobile */
-    @media (max-width: 480px) {
-      .slick-slide {
-        padding: 0 5px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Hero Section -->
   <section id="infinite" class="text-white tm-font-big tm-parallax">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
       <div class="container">
         <div class="tm-next">
@@ -231,7 +49,6 @@
       </div>
     </nav>
 
-    <!-- Hero Text -->
     <div class="text-center tm-hero-text-container">
       <div class="tm-hero-text-container-inner">
         <h2 class="tm-hero-title">Construction</h2>
@@ -240,7 +57,6 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
   <section id="gallery" class="tm-section-pad-top">
     <div class="container tm-container-gallery">
       <div class="row">
@@ -274,7 +90,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact" class="tm-section-pad-top tm-parallax-2">
     <div class="container tm-container-contact">
       <div class="row">
@@ -333,7 +148,6 @@
     </footer>
   </section>
 
-  <!-- Scripts -->
   <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -354,7 +168,7 @@
 
       // Handle dropdown item clicks - allow navigation
       $('.dropdown-item').on('click', function(e){
-        // Let the browser handle the navigation normally
+        e.stopPropagation();
         $('.navbar-collapse').removeClass('show');
       });
 
@@ -367,6 +181,19 @@
         }
       });
 
+      // Auto-Close Mobile Menu and Dropdown on Link Click (Optimized Logic)
+    var $navbarCollapse = $('#navbarSupportedContent');
+
+    // 1. Handle regular nav links (Home, Testimonials, Gallery, Contact)
+    $('#tmNav a.nav-link:not(.dropdown-toggle)').on('click', function(){
+      $navbarCollapse.removeClass('show'); 
+    });
+
+    // 2. Handle Dropdown item clicks (Interior, Sliding, Construction)
+    $('.dropdown-item').on('click', function(e) {
+      $navbarCollapse.removeClass('show');
+    });
+
       // Magnific Popup
       $('.tm-gallery').magnificPopup({
         delegate: 'a',
@@ -374,20 +201,49 @@
         gallery: { enabled: true }
       });
 
-      // Gallery carousel
+      // Gallery carousel 
       $('.tm-gallery').slick({
         dots: false,
+        arrows: true,
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 2,
         responsive: [
           { breakpoint: 1199, settings: { slidesToShow: 4, slidesToScroll: 2 } },
           { breakpoint: 991, settings: { slidesToShow: 3, slidesToScroll: 2 } },
-          { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-          { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+          { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1, arrows: false } }, 
+          { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, arrows: false } }   
         ]
       });
+      // FIX: Force recalculation immediately
+      $('.tm-gallery').slick('setPosition');
     });
+
+    // FINAL FALLBACK FIX: Recalculate on window load to ensure images are fully rendered.
+    $(window).on('load', function() {
+        $('.tm-gallery').slick('setPosition');
+    });
+
+
+    // Gallery carousel 
+    $('.tm-gallery').slick({
+      dots: false, arrows: true, infinite: true, slidesToShow: 5, slidesToScroll: 2,
+      responsive: [
+        { breakpoint: 1199, settings: { slidesToShow: 4, slidesToScroll: 2 } },
+        { breakpoint: 991, settings: { slidesToShow: 3, slidesToScroll: 2 } },
+        { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1, arrows: false } }, 
+        { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, arrows: false } }   
+      ]
+    });
+
+    // CRITICAL FINAL FIX: Force position refresh on window load and with a small delay
+    $(window).on('load', function() {
+        $('.tm-gallery').slick('setPosition');
+    });
+    setTimeout(function() {
+        $('.tm-gallery').slick('setPosition');
+    }, 100); 
+
   </script>
 </body>
 </html>
