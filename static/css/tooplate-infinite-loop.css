@@ -1,6 +1,6 @@
 /*
 Tooplate 2117 Infinite Loop
-REFACTORED: FINAL FIXES - Restored Desktop Layout and Preserved Mobile Spacing
+REFACTORED: FINAL FIXES - Fixed Hero Background & Testimonials
 */
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
@@ -93,20 +93,56 @@ a:hover, a:focus {
     min-height: 375px;
     position: relative;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 }
 .tm-hero-title { font-size: 3.5rem; text-shadow: 2px 2px 2px #333; }
 
 /* --- TESTIMONIALS FIX (REQUIRED) --- */
 #testimonials {
-    color: white; background-image: url(../img/infinite-loop-02.jpg); background-size: cover;
-    background-repeat: no-repeat; background-position: center; background-attachment: fixed;
-    position: relative; z-index: 1; min-height: 500px; padding-top: 80px; padding-bottom: 80px;
+    color: white; 
+    background-image: url(../img/infinite-loop-02.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
+    position: relative; 
+    z-index: 1; 
+    padding-top: 80px; 
+    padding-bottom: 60px;
 }
-.tm-bg-overlay { background-color: rgba(0, 0, 0, 0.65); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
+
+.tm-bg-overlay { 
+    background-color: rgba(0, 0, 0, 0.65); 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 1; 
+}
+
+.tm-testimonials-content {
+    position: relative;
+    z-index: 2;
+}
+
 .tm-testimonial-item blockquote {
-    color: #fff; font-size: 1.1rem; line-height: 1.8; margin: 0 auto 20px auto; padding: 0 10px; font-weight: 400;
-    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; max-height: 5.4em;
+    color: #fff !important; 
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    margin: 0 auto 20px auto; 
+    padding: 20px; 
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.tm-testimonial-item figcaption {
+    color: #fff !important;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    margin-top: 10px;
 }
 
 /* --- GALLERY FIX (REQUIRED) --- */
@@ -117,6 +153,9 @@ a:hover, a:focus {
     width: 100%; height: 250px; object-fit: cover; border-radius: 5px; max-width: 100%; display: block;
 }
 .tm-gallery .slick-prev, .tm-gallery .slick-next { z-index: 10; width: 40px; height: 40px; background: rgba(51, 102, 153, 0.8); border-radius: 50%; }
+
+/* Hide gallery image titles/captions */
+.tm-gallery-item figcaption { display: none; }
 
 /* CRITICAL FIXES FOR SLICK CAROUSEL VISIBILITY/HEIGHT COLLAPSE */
 .slick-list, .slick-track { min-height: 250px; }
@@ -142,52 +181,338 @@ a:hover, a:focus {
     .row { margin-left: 0; margin-right: 0; }
     [class*="col-"] { padding-left: 15px; padding-right: 15px; }
 
-    /* Scaling and Text */
-    .navbar-toggler { position: absolute; right: 15px; top: 15px; z-index: 1000; border-color: #369; }
-    .tm-hero-title { font-size: 1.6rem !important; }
-    .tm-hero-subtitle { font-size: 0.9rem !important; }
-    .tm-section-title { font-size: 1.8rem !important; }
-    .tm-footer { position: relative; bottom: auto; padding: 15px 10px; text-align: center; }
-
-    /* --- ALIGNMENT & STACKING FIX --- */
-
-    /* Ensure entire hero text block is centered */
+    /* Body and overflow fixes */
+    body { font-size: 1rem; }
+    
+    /* Navbar Mobile Optimization */
+    .tm-navbar { 
+        padding: 10px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .navbar-brand { 
+        font-size: 1rem !important; 
+        padding: 5px 0;
+        max-width: calc(100% - 60px);
+        color: white !important;
+    }
+    .tm-navbar.scroll .navbar-brand {
+        color: #369 !important;
+    }
+    .navbar-toggler { 
+        position: absolute; 
+        right: 15px; 
+        top: 12px; 
+        z-index: 1000; 
+        border-color: rgba(255, 255, 255, 0.5);
+        padding: 5px 8px;
+    }
+    .tm-navbar.scroll .navbar-toggler {
+        border-color: #369;
+    }
+    
+    /* Navbar collapse menu */
+    .navbar-collapse { 
+        background-color: rgba(255, 255, 255, 0.98); 
+        padding: 20px 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    
+    .navbar-collapse .nav-link {
+        color: #369 !important;
+    }
+    
+    /* Hero Section Mobile Optimization */
+    #infinite { 
+        min-height: 100vh; 
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-attachment: scroll !important;
+    }
+    
+    .tm-hero-text-container {
+        padding: 20px 15px;
+        margin-top: 60px;
+    }
+    
     .tm-hero-text-container-inner {
         text-align: center;
         max-width: 100%;
         margin: 0 auto;
+        padding: 20px 10px;
     }
     
-    /* WHAT WE DO SECTION STACKING FIX (CRITICAL) */
-    #whatwedo .tm-content-box [class*="col-lg-"] {
+    .tm-hero-title { 
+        font-size: 1.8rem !important; 
+        line-height: 1.3;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    
+    .tm-hero-subtitle { 
+        font-size: 0.95rem !important; 
+        line-height: 1.5;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        padding: 0 10px;
+    }
+    
+    /* Down arrow positioning */
+    .tm-intro-next {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Section titles and descriptions */
+    .tm-section-title { 
+        font-size: 1.8rem !important; 
+        margin-bottom: 20px !important;
+        line-height: 1.3;
+    }
+    
+    .tm-section-desc {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    /* WHAT WE DO SECTION - Complete Mobile Optimization */
+    #whatwedo { 
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    #whatwedo .tm-intro-text {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+    }
+    
+    #whatwedo .tm-content-box {
+        margin-bottom: 30px;
+    }
+    
+    #whatwedo .tm-content-box [class*="col-lg-"],
+    #whatwedo .tm-content-box [class*="col-md-"] {
         width: 100%;
-        float: none; /* Crucial: removes floating to force vertical stack */
+        float: none;
         padding-left: 15px;
         padding-right: 15px;
-        margin-left: 0; /* Ensures full width */
-        margin-right: 0; /* Ensures full width */
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    /* Center the Icon and add spacing */
+    /* Center icons and add proper spacing */
     #whatwedo .tm-content-box .col-lg-1 {
         text-align: center;
-        margin-bottom: 10px; 
-        padding-top: 20px; 
+        margin-bottom: 15px; 
+        padding-top: 20px;
+        width: 100%;
     }
     
-    /* Add vertical space between the service blocks */
+    #whatwedo .tm-icon {
+        font-size: 2.5rem !important;
+        margin-bottom: 10px;
+    }
+    
+    /* Add vertical space between service blocks */
     #whatwedo .tm-content-box .row:not(:first-child) { 
-        margin-top: 30px; 
+        margin-top: 40px; 
+        padding-top: 30px;
+        border-top: 1px solid #e0e0e0;
     }
 
-    /* --- GALLERY IMAGE CROPPING FIX --- */
-    .tm-gallery .slick-slide img, .tm-gallery-item img { 
-        height: 180px; 
-        object-fit: contain; /* FIX: Shows entire image, adds padding if aspect ratio doesn't fit */
-        background-color: #fff; /* Optional: Provides white background for padding if image doesn't fill space */
+    /* TESTIMONIALS SECTION - Enhanced for Mobile */
+    #testimonials {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+        min-height: auto !important;
+        background-attachment: scroll !important;
+        overflow: hidden;
+    }
+    
+    .tm-testimonials-content {
+        padding: 20px 15px 30px 15px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .tm-testimonials-carousel {
+        margin-top: 20px;
+        padding-bottom: 40px;
+    }
+    
+    .tm-testimonial-item {
+        padding: 15px 10px;
+    }
+    
+    .tm-testimonial-item blockquote {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        padding: 15px !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        background-color: rgba(0, 0, 0, 0.6) !important;
+        border-radius: 10px;
+        margin-bottom: 15px !important;
+        color: #ffffff !important;
+        font-weight: 400;
+        max-height: none !important;
+        display: block !important;
+    }
+    
+    .tm-testimonial-item figcaption {
+        font-size: 1rem !important;
+        margin-top: 10px;
+        font-weight: 700 !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        color: #ffffff !important;
+    }
+    
+    /* Make testimonial dots more visible */
+    .tm-testimonials-carousel .slick-dots {
+        bottom: 10px;
+        position: absolute;
+    }
+    
+    .tm-testimonials-carousel .slick-dots li {
+        margin: 0 5px;
+    }
+    
+    .tm-testimonials-carousel .slick-dots li button:before {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+        opacity: 1;
+    }
+    
+    .tm-testimonials-carousel .slick-dots li.slick-active button:before {
+        color: white;
+        opacity: 1;
+    }
+    
+    /* Ensure testimonial section overlay is visible */
+    #testimonials .tm-bg-overlay {
+        z-index: 1;
+    }
+    
+    #testimonials .container {
+        position: relative;
+        z-index: 2;
     }
 
-    /* CONTACT SECTION FIXES */
-    .contact-item { margin-left: 0; margin-bottom: 25px; text-align: left; }
-    .tm-input, .tm-btn-submit { width: 100% !important; }
+    /* GALLERY SECTION - Complete Mobile Optimization */
+    .tm-section-pad-top { 
+        padding-top: 50px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    .tm-gallery-container { 
+        padding-top: 40px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    /* Gallery images - Show full image without cropping */
+    .tm-gallery .slick-slide img, 
+    .tm-gallery-item img { 
+        height: auto !important;
+        min-height: 200px;
+        max-height: 300px;
+        object-fit: contain !important;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        width: 100% !important;
+        padding: 5px;
+    }
+    
+    /* Gallery item spacing */
+    .tm-gallery .slick-slide {
+        padding: 0 5px;
+    }
+    
+    .tm-gallery .slick-list {
+        margin: 0 -5px;
+    }
+    
+    /* Gallery arrows for mobile */
+    .tm-gallery .slick-prev,
+    .tm-gallery .slick-next {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .tm-gallery .slick-prev {
+        left: 5px !important;
+    }
+    
+    .tm-gallery .slick-next {
+        right: 5px !important;
+    }
+
+    /* CONTACT SECTION - Mobile Optimization */
+    #contact { 
+        padding-top: 60px !important;
+        padding-bottom: 80px !important;
+    }
+    
+    .tm-container-contact {
+        padding: 30px 15px;
+    }
+    
+    .contact-item { 
+        margin-left: 0; 
+        margin-bottom: 25px; 
+        text-align: left;
+        padding: 10px 0;
+    }
+    
+    .contact-item a {
+        display: flex;
+        align-items: center;
+        word-break: break-word;
+    }
+    
+    .contact-item i {
+        flex-shrink: 0;
+        margin-right: 15px !important;
+    }
+    
+    .contact-item span {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Form inputs */
+    .tm-input { 
+        width: 100% !important;
+        margin-bottom: 15px !important;
+        padding: 12px 15px !important;
+        font-size: 1rem !important;
+    }
+    
+    .tm-btn-submit { 
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+        margin-top: 10px;
+    }
+    
+    /* Footer */
+    .tm-footer { 
+        position: relative; 
+        bottom: auto; 
+        padding: 20px 15px; 
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.85rem;
+    }
+    
+    .tm-footer p {
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
 }
