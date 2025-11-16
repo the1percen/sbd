@@ -73,8 +73,8 @@ a:hover, a:focus {
 }
 
 /* Navbar Brand/Link Colors */
-.tm-navbar .navbar-brand { color: #369 !important; opacity: 1 !important; }
-.tm-navbar .nav-link { color: #369 !important; opacity: 1 !important; }
+.tm-navbar .navbar-brand { color: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.tm-navbar .nav-link { color: rgb(255, 255, 255) !important; opacity: 1 !important; }
 .tm-navbar.scroll .navbar-brand { color: #369 !important; }
 .tm-navbar.scroll .nav-link { color: #369 !important; }
 .tm-navbar.scroll .nav-link.current, .tm-navbar.scroll .nav-link.active {
@@ -91,7 +91,7 @@ a:hover, a:focus {
     background-repeat: no-repeat;
     height: 100vh;
     min-height: 375px;
-    position: relative;
+    position: center;
     background-size: cover;
     background-position: center center;
 }
@@ -104,12 +104,13 @@ a:hover, a:focus {
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center; 
-    background-attachment: fixed;
+    background-attachment: scroll;
     position: relative; 
     z-index: 1; 
     padding-top: 80px; 
     padding-bottom: 60px;
 }
+
 
 .tm-bg-overlay { 
     background-color: rgba(0, 0, 0, 0.65); 
@@ -267,6 +268,7 @@ a:hover, a:focus {
         bottom: 30px;
         left: 50%;
         transform: translateX(-50%);
+
     }
 
     /* Section titles and descriptions */
@@ -339,8 +341,8 @@ a:hover, a:focus {
     
     .tm-testimonials-content {
         padding: 20px 15px 30px 15px;
-        position: relative;
-        z-index: 2;
+        position: relative !important;
+        z-index: 60 !important;
     }
     
     .tm-testimonials-carousel {
@@ -397,7 +399,9 @@ a:hover, a:focus {
     
     /* Ensure testimonial section overlay is visible */
     #testimonials .tm-bg-overlay {
-        z-index: 1;
+         z-index: 2;                /* below the content */
+        pointer-events: none;     /* allow interactions to pass through */
+        opacity: 0.45;
     }
     
     #testimonials .container {
@@ -516,3 +520,239 @@ a:hover, a:focus {
         margin-bottom: 0;
     }
 }
+
+/* Testimonials Carousel Styling */
+.tm-testimonials-carousel {
+  background: transparent;
+}
+
+.tm-testimonial-item {
+  padding: 40px 20px;
+  text-align: center;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
+
+.tm-testimonial-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tm-testimonial-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.tm-testimonial-author {
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Slick dots styling */
+.tm-testimonials-carousel .slick-dots {
+  bottom: -40px;
+}
+
+.tm-testimonials-carousel .slick-dots li button:before {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
+.tm-testimonials-carousel .slick-dots li.slick-active button:before {
+  color: #fff;
+}
+
+/* ===============================
+   HERO CENTERING (without moving navbar)
+   =============================== */
+
+/* NAVBAR must remain fixed at the top */
+.tm-navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* HERO SECTION: push down by navbar height */
+#infinite {
+  position: relative;
+  min-height: calc(100vh - 70px); /* adjust if navbar is taller */
+  padding-top: 70px; /* ensures hero starts below navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* HERO CONTENT: perfect center */
+.tm-hero-text-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* Title + subtitle responsive */
+.tm-hero-title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.tm-hero-subtitle {
+  font-size: clamp(1rem, 1.1vw, 1.3rem);
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+}
+
+/* Keep down arrow at bottom */
+.tm-intro-next {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;  
+}
+
+
+/* ===== Testimonials: center slides & keep visible after swipe ===== */
+
+/* allow carousel to overflow so slides don't get clipped while animating */
+.tm-testimonials-carousel .slick-list {
+  overflow: visible !important;
+  z-index: 5;
+}
+
+/* make each slick slide a centered flex container so slide content is centered horizontally */
+.tm-testimonials-carousel .slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;          /* avoid creating new stacking contexts */
+  -webkit-transform: none !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  will-change: auto !important;
+  box-sizing: border-box;
+  padding: 18px 0;                      /* spacing above/below slides */
+}
+
+/* limit the width of the testimonial card and center it */
+.tm-testimonial-content {
+  position: relative !important;
+  z-index: 10 !important;
+  width: min(760px, 92%);
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(10,10,10,0.55);      /* darker translucent card on top of blurred bg */
+  border-radius: 10px;
+  padding: 22px 24px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* typography inside card */
+.tm-testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.95);
+  margin: 0 0 12px 0;
+  font-style: normal;
+}
+
+/* author line */
+.tm-testimonial-author {
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  font-size: 0.95rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* place arrows & dots above background */
+.tm-testimonials-carousel .slick-prev,
+.tm-testimonials-carousel .slick-next,
+.tm-testimonials-carousel .slick-dots {
+  z-index: 20 !important;
+}
+
+/* ensure prev/next are vertically centered and not clipped */
+.tm-testimonials-carousel .slick-prev,
+.tm-testimonials-carousel .slick-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* mobile adjustments */
+@media (max-width: 767px) {
+  .tm-testimonial-content { width: calc(100% - 40px); padding: 16px; min-height: auto; }
+  .tm-testimonial-text { font-size: 0.95rem; }
+  .tm-testimonial-author { text-align: center; }
+  .tm-testimonials-carousel .slick-prev,
+  .tm-testimonials-carousel .slick-next { display: none; }
+}
+
+/* ---------- Slick carousel fixes (testimonial) ---------- */
+
+/* Make the track a flex row so slides remain visible and centered
+   — DO NOT force transform: none; Slick needs transforms to move slides */
+.tm-testimonials-carousel .slick-track {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  /* keep backface settings but allow transforms */
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  will-change: transform;
+}
+
+/* Let slides be stable and centered — do NOT override transform on slides */
+.tm-testimonials-carousel .slick-slide {
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin: 0 12px; /* spacing between slides */
+  display: block !important;
+  float: none !important;
+  box-sizing: border-box;
+  padding: 0 !important;
+}
+
+/* Ensure active slide card sits above everything */
+.tm-testimonials-carousel .slick-current .tm-testimonial-content {
+  z-index: 120 !important;
+}
+
+/* Keep non-current slides visually present but lower */
+.tm-testimonials-carousel .slick-slide .tm-testimonial-content {
+  z-index: 10;
+  transition: box-shadow .25s ease, transform .25s ease, opacity .25s ease;
+}
+
+/* Prevent the overlay/background from occluding cards */
+#testimonials .tm-bg-overlay { pointer-events: none !important; }
+
+/* For browsers that aggressively flatten layers, keep the testimonial area GPU-accelerated */
+.tm-testimonials-content, .tm-testimonials-carousel { transform: translateZ(0); }
