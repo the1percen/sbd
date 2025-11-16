@@ -756,3 +756,30 @@ a:hover, a:focus {
 
 /* For browsers that aggressively flatten layers, keep the testimonial area GPU-accelerated */
 .tm-testimonials-content, .tm-testimonials-carousel { transform: translateZ(0); }
+
+/* --- Force only the current testimonial to be visible --- */
+/* Allow Slick to move the track (use block so transform: translateX works) */
+.tm-testimonials-carousel .slick-track {
+  overflow: visible !important;
+}
+
+/* Hide non-current slides */
+.tm-testimonials-carousel .slick-slide:not(.slick-current) {
+    opacity: 0.3 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: scale(0.95) !important; /* slight shrink for non-current slides */
+    }
+/* Show only the current slide */
+.tm-testimonials-carousel .slick-current {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* keep arrows and dots usable above slides */
+.tm-testimonials-carousel .slick-prev,
+.tm-testimonials-carousel .slick-next,
+.tm-testimonials-carousel .slick-dots {
+  z-index: 50 !important;
+}
