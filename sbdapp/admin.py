@@ -3,7 +3,7 @@ from .models import GalleryImage, Testimonial
 
 @admin.register(GalleryImage)
 class GalleryImageAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'category', 'uploaded_at')
+    list_display = ('id', 'title', 'category', 'uploaded_at','image')
     search_fields = ('title',)
     list_filter = ('category', 'uploaded_at')
 
