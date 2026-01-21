@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}">
-  <title>Sliding Systems - SUBASH BUILD AND DESIGN</title>
+  <title>Sliding Systems - SUBASH BUILD AND DESIGN STUDIO</title>
   <link rel="stylesheet" href="{% static 'fontawesome-5.5/css/all.min.css' %}" />
   <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
   <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
       <div class="container">
         <div class="tm-next">
-          <a href="{% url 'index' %}" class="navbar-brand">SUBASH BUILD AND DESIGN</a>
+          <a href="{% url 'index' %}" class="navbar-brand">SUBASH BUILD AND DESIGN STUDIO</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -40,7 +40,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'interior' %}">Interior Design</a>
                 <a class="dropdown-item" href="{% url 'sliding' %}">Sliding Systems</a>
-                <a class="dropdown-item" href="{% url 'construction' %}">Construction</a>
+                <a class="dropdown-item" href="{% url 'construction' %}">Constructions</a>
               </div>
             </li>
             <li class="nav-item"><a class="nav-link tm-nav-link" href="{% url 'index' %}#testimonials">Testimonials</a>
@@ -79,7 +79,7 @@
               {% for image in gallery_images %}
               <a href="{{ image.image.url }}" class="tm-gallery-item">
                 <figure class="effect-honey">
-                  <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid">
+                  <img src="{{ image.image.url }}" class="img-fluid">
                   <figcaption>
                     <h2><i>{{ image.title }}</i></h2>
                   </figcaption>
@@ -101,7 +101,9 @@
       <div class="row">
         <div class="text-center col-12">
           <h2 class="tm-section-title mb-4">Contact Us</h2>
-          <p class="mb-5">We'd love to hear about your sliding system needs. Get in touch today!</p><br>
+          <p class="mb-5">We'd love to hear from you! Whether you're planning a new construction project, redesigning
+            your interiors, or need some custom aluminium sliding wardrobe and partition solutions, our team is here to help. Get in touch with
+            us today.</p><br>
         </div>
         <div class="col-sm-12 col-md-6">
           <form action="{% url 'contact' %}" method="POST">
@@ -112,39 +114,40 @@
             <button type="submit" class="btn tm-btn-submit">Submit</button>
           </form>
         </div>
-       <div class="col-sm-12 col-md-6">
-          <div class="contact-item">
-            <a rel="nofollow" href="mailto:subashbuildanddesignstudio@gmail.com" class="item-link"
-              style="display: flex; align-items: center;">
-              <i class="far fa-2x fa-envelope mr-4"></i>
+        <div class="col-sm-12 col-md-6">
+          <div class="contact-item mb-4">
+            <a rel="nofollow" href="mailto:subashbuildanddesignstudio@gmail.com"
+              class="item-link d-flex align-items-center text-white">
+              <i class="far fa-2x fa-envelope mr-4 fa-fw"></i>
               <span class="mb-0">subashbuildanddesignstudio@gmail.com</span>
             </a>
           </div>
-          <div class="contact-item m-2">
-            <a rel="nofollow" href="#" class="item-link" style="display: flex; align-items: center;">
-              <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
-              <span class="mb-0" style="text-align: left;">1/15,17 th Street, B -sector, Siva Sakthi Nagar, Annanur,
-                Chennai-6000062</span>
+          <div class="contact-item mb-4">
+            <a rel="nofollow"
+              href="https://www.google.com/maps/search/600109%2C%20Sector%20B%2C%20SivaSakthi%20Nagar%2C%20Annanur%2C%20Cholambedu%2C%20Chennai%2C%20Tamil%20Nadu%20600062%2C%20India/@13.121279991253738,80.12623373419046,17z?hl=en"
+              class="item-link d-flex align-items-center text-white">
+              <i class="fas fa-2x fa-map-marker-alt mr-4 fa-fw"></i>
+              <span class="mb-0 text-left">1/15, 17th Street, B-sector, Siva Sakthi Nagar, Annanur,
+                Chennai-600062</span>
             </a>
           </div>
-          <div class="contact-item m-2">
-            <a rel="nofollow" href="tel:7550180554" class="item-link" style="display: flex; align-items: center;">
-              <i class="fas fa-2x fa-phone-square mr-4"></i>
+          <div class="contact-item mb-4">
+            <a rel="nofollow" href="tel:7550180554" class="item-link d-flex align-items-center text-white">
+              <i class="fas fa-2x fa-phone-square mr-4 fa-fw"></i>
               <span class="mb-0">7550180554</span>
             </a>
           </div>
-          <div class="contact-item m-2">
-            <a href="https://wa.me/917550180554" target="_blank" class="item-link"
-              style="display: flex; align-items: center;">
-              <i class="fab fa-2x fa-whatsapp mr-4"></i>
+          <div class="contact-item mb-4">
+            <a href="https://wa.me/917550180554" target="_blank" class="item-link d-flex align-items-center text-white">
+              <i class="fab fa-2x fa-whatsapp mr-4 fa-fw"></i>
               <span class="mb-0">7550180554</span>
             </a>
           </div>
-          <div class="contact-item m-2">
-            <a href="https://www.instagram.com/sbdstudio.2026/" target="_blank" class="item-link mr-3"
-              style="display: flex; align-items: center;">
-              <i class="fab fa-2x fa-instagram mr-4"></i>
-              <span class="mb-0">SBS STUDIO</span>
+          <div class="contact-item">
+            <a href="https://www.instagram.com/sbdstudio.2026/" target="_blank"
+              class="item-link d-flex align-items-center text-white">
+              <i class="fab fa-2x fa-instagram mr-4 fa-fw"></i>
+              <span class="mb-0">SBD STUDIO</span>
             </a>
           </div>
         </div>
@@ -153,8 +156,8 @@
   </section>
   <footer class="text-center small tm-footer"
     style="background-color: #fff; color: #666; width: 100%; padding-bottom: 10px; text-align: center;">
-    <p class="mb-4">Copyright &copy; 2025 SUBASH BUILD AND DESIGN . <a rel="nofollow" href="#"
-        style="color: #666;">Designed by upmtechnologies</a></p>
+    <p class="mb-4">Copyright &copy; 2025 SUBASH BUILD AND DESIGN STUDIO |
+        Designed by upmtechnologies</p>
   </footer>
 
   <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
