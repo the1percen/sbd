@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('sbdadmin/', admin.site.urls),
     path('', include('sbdapp.urls')),
     path('favicon.ico', RedirectView.as_view(url='/static/img/favicon-32x32.png', permanent=True)),
 ]
