@@ -126,7 +126,7 @@ a:focus {
 /* --- HERO SECTION --- */
 #infinite {
     background-color: #222;
-    background-image: url(../img/infinite-loop-01.jpg);
+    background-image: url(../img/first%20page.jpeg);
     background-repeat: no-repeat;
     height: 100vh;
     min-height: 375px;
@@ -737,12 +737,18 @@ a:focus {
 /* HERO CONTENT: perfect center */
 .tm-hero-text-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 18px 18px;
     text-align: center;
     position: relative;
     z-index: 5;
+    background: rgba(195, 191, 191, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
 
 /* Title + subtitle responsive */
@@ -750,12 +756,13 @@ a:focus {
     font-size: clamp(2.2rem, 4vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 10px;
-    color: #fff;
+    color: #e26f1c;
 }
 
 .tm-hero-subtitle {
     font-size: clamp(1rem, 1.1vw, 1.3rem);
-    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    color: #5a0910;
     margin: 0;
 }
 
